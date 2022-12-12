@@ -54,7 +54,7 @@ if __name__ == "__main__":
     # Calculate the idf score for each word
     idf_dict = {}
     for key in count_dict:
-        if count_dict[key][0] != 0 and count_dict[key][1] != 0:
+        if count_dict[key][0] != 0 and count_dict[key][1] != 0 and count_dict[key][0] != count_dict[key][1]:
             Nt = count_dict[key][1]
             Pt = count_dict[key][0]
             NtPt = Nt/Pt
@@ -101,4 +101,3 @@ if __name__ == "__main__":
         writer = csv.writer(file)
         for i in range(len(vec_pos)):
             writer.writerow(vec_pos[i])
-
